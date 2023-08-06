@@ -2,16 +2,13 @@ import React from 'react';
 import TodoAdd from '../TodoAdd/todoAdd';
 import TodoItem from '../TodoItem/TodoItem';
 
+interface TodoItem {
+  title : String
+}
+
 function TodoApp() {
 
-  let todoItems = [
-    { title: "Work", deadline: new Date()},
-    { title: "Work", deadline: new Date()},
-    { title: "Work", deadline: new Date()},
-    { title: "Work", deadline: new Date()},
-    { title: "Work", deadline: new Date()},
-    { title: "Work", deadline: new Date()}
-  ];
+  let todoItems : TodoItem[] = []
 
   let todoItemsRows = []
 
@@ -19,12 +16,16 @@ function TodoApp() {
     todoItemsRows.push(<TodoItem item={todoItem} />)
   }
 
+  const handleAdd = () => {
+    
+  }
+
   return(
     <div className="bg-lightBeige w-screen h-screen flex flex-col items-center pt-10">
       <div className="m-6">
         <h1 className="text-5xl text-darkNavy">To Do App</h1>
       </div>
-      <TodoAdd></TodoAdd>
+      <TodoAdd handleAdd={handleAdd}></TodoAdd>
       {todoItemsRows}
     </div>
   )

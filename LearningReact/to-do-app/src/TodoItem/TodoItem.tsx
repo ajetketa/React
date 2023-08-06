@@ -2,8 +2,7 @@ import React from 'react';
 import deadline from './deadline.png';
 
 interface ItemProps {
-  title : String, 
-  deadline: Date
+  title : String
 }
 
 interface Props {
